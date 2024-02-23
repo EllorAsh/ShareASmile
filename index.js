@@ -4,8 +4,8 @@ const app = express();
 app.get("/", (req, res)=>{
     res.render("./index.html")
 });
-app.get("/signup.html", (req, res)=>{
-    res.render("./index.html")
+app.post("/signup", (req, res)=>{
+    res.send({ message: 'No blah Found' });
 });
 
 app.listen(3000,()=>{
