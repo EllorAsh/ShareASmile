@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EllorAsh/ShareASmile/issues"
   },
-  "homepage": "https://github.com/EllorAsh/ShareASmile#readme"
+  "homepage": "https://github.com/EllorAsh/ShareASmile#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
