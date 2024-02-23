@@ -1,8 +1,11 @@
 import express from "express"
 const app = express();
 
-app.get("/sign-up.php", (req, res)=>{
-    res.render("index.html")
+app.get("/", (req, res)=>{
+    res.render("./index.html")
+});
+app.get("/signup", (req, res)=>{
+    res.render("./index.html")
 });
 
 app.listen(3000,()=>{
