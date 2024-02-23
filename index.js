@@ -4,7 +4,7 @@ const app = express();
 app.get("/", (req, res)=>{
     res.render("./index.html")
 });
-app.get("/signup", (req, res)=>{
+app.get("/signup.html", (req, res)=>{
     res.render("./index.html")
 });
 
