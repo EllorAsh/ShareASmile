@@ -1,9 +1,8 @@
 import express from "express"
-import bodyParser from "body-parser";
 const app = express();
 
 app.post("/signup", function(req, res){
-    res.send({ message: 'No blah Found' });
+    
 });
 
 app.listen(3000,()=>{
