@@ -2,7 +2,7 @@ import express from "express"
 const app = express();
 
 app.get("/sign-up", (req, res)=>{
-    res.send("Hello");
+    res.send({ message: 'No blah Found' });
 });
 
 app.listen(3000,()=>{
