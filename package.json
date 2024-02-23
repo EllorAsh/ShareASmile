@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/EllorAsh/ShareASmile#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.18.2"
   }
 }
