@@ -2,7 +2,7 @@ import express from "express"
 import bodyParser from "body-parser";
 const app = express();
 
-app.get("/signup", (req, res)=>{
+app.post("/signup", function(req, res){
     res.send({ message: 'No blah Found' });
 });
 
