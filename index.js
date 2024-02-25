@@ -1,10 +1,17 @@
-import express from "express"
+import express from "express";
+import bodyparser from "body-parser"
 const app = express();
 
-app.post("/signup", function(req, res){
-    
+app.use(express.static("./public"));
+
+app.get("/", (req, res)=>{
+    res.render("index.ejs")
 });
 
-app.listen(3000,()=>{
-    console.log("server running on port 3000");
+app.post("/sign-up", (req,res)=>{
+
+});
+
+app.listen(3000, ()=>{
+    console.log("server started on port 3000");
 });
