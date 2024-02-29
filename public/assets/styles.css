@@ -1,0 +1,147 @@
+.no-margin{
+    margin: 0px;
+}
+.header{
+    background-color: #FFDE59;
+    display: flex;
+    justify-content: space-between;
+    margin: 0%;
+}
+.vertical-logo{
+    height: 60px;
+    margin: 0px;
+}
+.nav-bar-options{
+    text-decoration: none;
+    list-style: none;
+    margin-right: 30px;
+}
+.nav-bar-option{
+    background: #FFDE59;
+    border: 0 none;
+    cursor: pointer;
+    margin: 0%;
+}
+.home-body{
+    background: image-set("./3.png");
+    background-size: cover;
+    margin: 0px;
+}
+.browse-smiles{
+    background: image-set("./9.png");
+    background-size: cover;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 10px;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.user-shared-smiles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 10px;
+    justify-content: center;
+
+}
+.profile-body{
+    background: image-set("./12.png");
+    background-size: cover;
+    margin: 0px;    
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.user-info{
+    background-color: #FFF6D7;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.create-smile-button{
+    align-self: flex-end;
+}
+.profile-display{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.create-post{
+    background: image-set("./6.png");
+    background-size: cover;
+    margin: 0px;
+    height: fit-content;
+    padding: 10%;
+    text-align: center;
+}
+.create-post-content-margin{
+    margin: 20px;
+}
+.create-post-content{
+    background-color: #FFF6D7;
+    border: 0 none;
+    height: 200px;
+    width: 100%;
+    
+}
+.create-post-block{
+    background-color: #FFDE59;
+}
+.create-post-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.home-img-1, .browse-img-1, .createSmile-img-1, .profile-img-1{
+    width : 100%;
+    margin: 0%;
+}
+.home-img-2, .browse-img-2, .createSmile-img-2, .profile-img-2{
+    width : 100%;
+    margin: 0%;
+}
+.home-text-top, .createSmile-text-top, .browse-text-top, .profile-text-top{
+    background-color: #BCA477;
+    height: fit-content;
+    text-align: center;
+    padding: 30px;
+    margin: 0px;
+}
+.home-text-bottom, .createSmile-text-bottom, .browse-text-bottom, .profile-text-bottom{
+    background-color: #BCA477;
+    height: fit-content;
+    text-align: center;
+    padding: 30px;
+    margin: 0px;
+}
+.horizontal-logo{
+    height: 100px;
+}
+.footer{
+    text-align: center;
+    background-color: #FFDE59;
+}
+
+/* posts */
+.smile-post{
+    background-color: #FFDE59;
+}
+.post-user-info{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+.profile-display{
+    background: none;
+    border: 0 none;
+}
+.post-content{
+    background-color: #FFF6D7;
+    text-align: center;
+    margin: 10px;
+    height: 120px;
+    margin-top: 0px;
+    contain: content;
+}

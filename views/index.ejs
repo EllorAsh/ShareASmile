@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <div class="header">
@@ -17,14 +18,15 @@
         <p>...</p>
         <div>
             <div class="sign-up">
-                <a href="./sign-up.ejs">
-                    <h2>Sign-up</h2>
-                </a>
+                <form action="/sign-up-page" method="get">
+                    <input type="submit" value="sign-up">
+                </form>
+                
             </div>
-            <div class="sign-in">
-                <a href="./sign-in.ejs">
-                    <h2>Sign-in</h2>
-                </a>
+            <div class="sign-in" method="get">
+                <form action="/sign-in-page">
+                    <input type="submit" value="sign-in">
+                </form>
             </div>
         </div>
 
@@ -33,5 +35,6 @@
         <img src="./assets/Logo_1.png"/>
 
     </div>
+    <script src="../index.js" charset="UTF-8"></script>
 </body>
 </html>
