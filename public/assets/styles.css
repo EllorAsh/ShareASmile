@@ -145,3 +145,7 @@
     margin-top: 0px;
     contain: content;
 }
+.post-info{
+    display: flex;
+    justify-content: end;
+}
