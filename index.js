@@ -319,6 +319,7 @@ app.listen(3000, ()=>{
 app.post("/deleteSmile", async (req, res)=>{
     const postToDeleteId =req.body["idpost"];
     var id = parseInt(postToDeleteId)
+    await db.query("DELETE FROM likes WHERE post_id = $1",[id])
     await db.query("DELETE FROM posts WHERE idpost = $1", [id])
     res.redirect("/home")
 })
@@ -339,7 +340,7 @@ app.post("/LikeSmile", async (req, res) =>{
     }else{
         currentPostLikes --;
         await db.query("UPDATE posts SET likes=$1 WHERE idpost = $2",[currentPostLikes, postLikedId])            
-        await db.query("DELETE FROM likes WHERE post_id = $1",[postLikedId])
+        await db.query("DELETE FROM likes WHERE post_id = $1 AND user_id = $2",[postLikedId, userThatLikedId])
         console.log("post already liked");
     }
     console.log(currentPostLikes)
