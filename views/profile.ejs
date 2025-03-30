@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="./assets/styles.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Give+You+Glory&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <img class="vertical-logo" src="./assets/Logo_2.png"/>
+        <div class="nav-button">
+            <p class="d-inline-flex ">
+                <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                    </svg>
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div>
+                  <ul class="nav-bar-options font-2">
+                    <li class="nav-bar-option">
+                        <form action="/profile" method="post">
+                            <input hidden="true" name="ownUser" value="true"/>
+                            <input hidden="true" name="user" type="text" value=<%=username%>>
+                            <input class="nav-bar-option" type="submit" value="Profile"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/browse" method="get">
+                            <input hidden="true" name="user" type="text" value=<%=username%>>
+                            <input class="nav-bar-option" type="submit" value="Browse"/>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="/home" method="get">
+                            <input hidden="true" name="user" type="text" value=<%=username%>>
+                            <input class="nav-bar-option" type="submit" value="Home"/>
+                        </form>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="profile-img-1" src="./assets/11.png"/>
+    <div class="profile-text-top font-1">
+
+    </div>    
+    <div class="profile-body font-2">
+
+        <div class="user-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+              </svg>
+            <div class="profile-display">
+                <div>
+                    <h3><%=name%> </h3>
+                    <%if(locals.ownProfile){%>
+                        <%if(ownProfile === true) {%>
+                            <div class="create-smile-button">
+                                <form action="/EditProfile" method="post">
+                                    <input hidden="true" name="userEmail" value=<%=username%>>
+                                    <button class="no-button-style" type="submit" value="Edit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        <%}%>
+                    <%}else{%>
+                        <div>
+                                
+                        </div>
+                    <%}%>                     
+                </div>
+                <h2>Posted smiles</h2>
+            </div>
+                <%if(locals.ownProfile){%>
+                    <%if(ownProfile === true) {%>
+                        <div class="create-smile-button">
+                            <form action="/create-smile" method="post">
+                                <button class="button-dark" type="submit" value="Create smile">Create Smile</button>
+                            </form>
+                        </div>
+                    <%}%>
+                <%}else{%>
+                    <div>
+                            
+                    </div>
+                <%}%>           
+        </div>
+
+        <div class="user-shared-smiles font-2">
+            <%if(locals.sharedPosts){%>
+                <%sharedPosts.forEach(post => {%>
+                    <div class="smile-post" id=<%=post.idpost%>>
+                        <div class="post-user-info">
+                            <h2><%=post.name%></h2>
+                            <form action="/profile" method="post">
+                                <input hidden="true" name="ownUser" value="false"/>
+                                <input hidden="true" name="user" type="text" value=<%=post.username%>>
+                                <button class="profile-display" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="post-content">
+                            <p><%=post.content%></p>
+                        </div>
+                        <div class="post-info">
+                            <div class="smile-likes">
+                                <form action="/LikeSmile" method="post">
+                                    <input hidden="true" name="userThatLiked" value=<%=username%>>
+                                    <input hidden="true" name="idpost" value=<%=post.idpost%>>
+                                    <button class="like-button no-button-style" type="submit">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                                            <path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.5 3.5 0 0 0 8 11.5a3.5 3.5 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683M7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5m4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5"/>
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                            <h3 class="likes-number" id=<%="likesOf"+post.idpost%>>
+                                <%=post.likes%>
+                            </h3>
+                        </div>
+                        <%if(locals.ownProfile){%>
+                            <%if(ownProfile === true){%>
+                                <div class="delete-smile">
+                                    <form action="/deleteSmile" method="post">
+                                        <input hidden="true" name="idpost" value=<%=post.idpost%>>
+                                        <button class="no-button-style" type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                                                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+                                            </svg>
+                                        </button>
+                                    </form>
+                                </div>                                
+                            <%}%>
+                        <%}%>
+                    </div>
+                <%});%>
+            <%}%>
+        </div>
+    </div>
+    <div class="profile-text-bottom font-1">
+
+    </div>
+    <img class="profile-img-2" src="./assets/13.png"/>
+    <div class="footer font-2">
+        <img class="horizontal-logo" src="./assets/Logo_1.png"/>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../index.js" charset="UTF-8"></script>
+</body>
+</html>
